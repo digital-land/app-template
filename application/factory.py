@@ -47,11 +47,6 @@ def register_filters(app):
 
 
 def register_extensions(app):
-    from application.extensions import db, migrate
-
-    db.init_app(app)
-    migrate.init_app(app, db)
-
     from flask_sslify import SSLify
 
     sslify = SSLify(app)  # noqa
@@ -78,6 +73,4 @@ def register_templates(app):
 
 
 def register_commands(app):
-    from application.commands import data_cli
-
-    app.cli.add_command(data_cli)
+    return
